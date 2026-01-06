@@ -6,13 +6,13 @@
 
 (2) J H M Darbyshire. Coding Interest Rates: FX, Swaps & Bonds. [Amazon link](https://www.amazon.com/dp/0995455562) 
 
-(3) [Rateslib Documentation][URL] 
+(3) [Rateslib Documentation][URL1] 
 
-[URL]: https://rateslib.com/py/en/2.0.x/index.html 
+[URL1]: https://rateslib.com/py/en/2.0.x/index.html 
 
-(4) [Code Repository for Pricing and Trading IRDs][URL] 
+(4) [Code Repository for Pricing and Trading IRDs][URL2] 
 
-[URL]: https://github.com/attack68/book_irds3 
+[URL2]: https://github.com/attack68/book_irds3 
 
 ---
 
@@ -586,7 +586,7 @@ solver_irs = Solver(
 
 These adjusted rates will be used in our solver along with turn spread rates and butterfly rates (in basis points). Weights are also created, and here the first turn in the curve has also been given a low weighting. This first turn appears at the very front of the curve and has a large impact on the first one-month instrument expiring at the end of March. This ideally allows the turn more freedom to adjust from the set 5 basis points, and market instruments to re-price more closely. 
 
-The solver for the swaps curve has also been given a pre solver which creates a linking chain between them. Examples are shown in (3) of how this is especially useful for creating a dependency chain between curves in different currencies. Here, this will allow us to price futures and swaps together in a single solver by assigning the correct string id curve to those respective instruments. The function tolerance and convergence tolerance of the solver have been widened to less restrictive values from their default values of 1e-12 and 1e-17 to allow the now overspecified curve to solve; and the solver reaches convergence on a function value of approx. 1.4e-6.   
+The solver for the swaps curve has also been given a pre solver which creates a linking chain between them. Examples are shown in (3) of how this is especially useful for creating a dependency chain between curves in different currencies. Here, this will allow us to price futures and swaps together in a single solver by assigning the correct string id curve to those respective instruments. The function tolerance and convergence tolerance of the solver have been widened to less restrictive values from their default values of 1e-12 and 1e-17 to allow the now overspecified curve to solve; and the solver reaches convergence on a function value of approx. 1.2e-6.   
 
 ![irs solver](/assets/img12.PNG)
 
@@ -603,6 +603,8 @@ Comparing plots of overnight forward rates of the futures curve and swaps curve 
 The rates for both the June IMM IRS and 2-year IRS are the mid-market swap rates for those instruments with the assigned string id “irs” curve. The June futures contract (with assigned “sofr” curve) can also be priced off the futures curve by the same solver through the pre solver. This will become especially useful when aggregating these instruments into a portfolio. The mid-market 2-year IRS is also shown with a net present value of zero as the sum of fixed and float leg npv’s. 
 
 ![cashflows and spec](/assets/img17.PNG)
+
+![cashflows and spec](/assets/img19.PNG)
 
 A cashflows method is available to quickly and concisely display the properties of each period for each leg of a swap, and a cashflows table is available to sum cashflows for each leg based on payment date. Without a fixed rate or notional specified, the cashflows for the 2-year are displayed for a mid-market payer with a notional of 1 million (setting a negative notional would switch to a receiver). These swaps use the default usd_irs spec but could easily be customized in a wide variety of means which are thoroughly documented in (3). 
 
