@@ -148,3 +148,14 @@ curve_irs = Curve(
     id="irs",
 )
 ```
+
+#### Sample Image
+
+![My plot](/assets/imgtest1.png)
+
+---
+
+#### Another Sample Image
+
+![My plot](/assets/imgtest2.png)
+
