@@ -602,7 +602,7 @@ Comparing plots of overnight forward rates of the futures curve and swaps curve 
 
 The rates for both the June IMM IRS and 2-year IRS are the mid-market swap rates for those instruments with the assigned string id “irs” curve. The June futures contract (with assigned “sofr” curve) can also be priced off the futures curve by the same solver through the pre solver. This will become especially useful when aggregating these instruments into a portfolio. The mid-market 2-year IRS is also shown with a net present value of zero as the sum of fixed and float leg npv’s. 
 
-![cashflows and spec](/assets/img17.PNG)
+![cashflows and spec](/assets/img20.PNG)
 
 ![cashflows and spec](/assets/img19.PNG)
 
