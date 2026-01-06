@@ -151,11 +151,11 @@ curve_irs = Curve(
 
 #### Sample Image
 
-![My plot](/assets/imgtest1.png)
+![My plot](/assets/imgtest1.PNG)
 
 ---
 
 #### Another Sample Image
 
-![My plot](/assets/imgtest2.png)
+![My plot](/assets/imgtest2.PNG)
 
