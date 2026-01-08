@@ -26,7 +26,7 @@ The material presented should by no means be considered correct, and readers sho
 
 ---
 
-The notebook Curve 3_19 builds what is essentially a closing curve for that day, and we will begin by calculating mid-market prices from a snapshot of CME SOFR futures order book data (including various spread and butterfly order books) taken at 1500 central standard time. This snapshot builds order books across the top ten price levels from the mbp-10 (market by price) schema using the CME Globex MDP 3.0 dataset. An example of how this data can be retrieved from the Databento API and then stored in a .json format is included in `Data/Databento_Order Books JSON`. 
+The notebook `Curve 3_19` builds what is essentially a closing curve for that day, and we will begin by calculating mid-market prices from a snapshot of CME SOFR futures order book data (including various spread and butterfly order books) taken at 1500 central standard time. This snapshot builds order books across the top ten price levels from the mbp-10 (market by price) schema using the CME Globex MDP 3.0 dataset. An example of how this data can be retrieved from the Databento API and then stored in a .json format is included in `Data/Databento_Order Books JSON`. 
 
 CME SOFR futures permit relatively wide tick increments of .5bps so we will define a function for a mid-market algorithm that attempts to reduce variance of mid-price due to trading taking place, or volume being added, at a particular point. The mean intrinsic depth average will take into account information beyond the first depth by averaging the bid and ask prices that would be achieved up to some specified maximum quantity. 
 
